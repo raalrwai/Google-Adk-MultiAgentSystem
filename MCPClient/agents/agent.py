@@ -2,7 +2,6 @@ from google.adk.agents.llm_agent import Agent
 from google.adk.models.lite_llm import LiteLlm
 import yfinance as yf
 import requests
-
 def resolve_ticker(query: str):
     """
     Resolves company names or partial matches into a valid ticker.
