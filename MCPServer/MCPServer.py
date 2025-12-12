@@ -1,14 +1,14 @@
-# fastmcp_server.py
 from fastmcp import FastMCP
-from agents.agent import root_agent  
+from tools.getStockPrice import get_stock_price
 
 mcp = FastMCP(name="Stock MCP Server")
 
 @mcp.tool
 def get_stock_price_tool(ticker: str):
-    return root_agent.tools[0](ticker)  
+    print("[FastMCP] Tool invoked:", ticker)
+    return get_stock_price(ticker)
 
 if __name__ == "__main__":
-    print("Starting FastMCP server on default port 5000...")
-    mcp.run()
-
+    # NOTE: Specify HTTP transport here
+    print("Starting FastMCP HTTP server on http://127.0.0.1:5000/mcp …")
+    mcp.run(transport="http", host="127.0.0.1", port=5000)

@@ -1,5 +1,7 @@
 from google.adk.agents.llm_agent import Agent
 from .agents.stock_agent import stock_agent
+from .agents.mcpSubAgent import mcp_sub_agent
+
 
 ROOT_MANAGER_INSTR = """
 You are a helpful stock price coordinator.
@@ -15,7 +17,9 @@ manager_agent = Agent(
     description="Delegates stock price queries to stock_agent.",
     model="gemma-3-27b-it",
     instruction=ROOT_MANAGER_INSTR,
-    sub_agents=[stock_agent],  
+    # sub_agents=[stock_agent],  
+    sub_agents=[mcp_sub_agent],  
+
 )
 
 root_agent = manager_agent
