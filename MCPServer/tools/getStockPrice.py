@@ -1,5 +1,3 @@
-# stock_tools.py
-
 import yfinance as yf
 import requests
 
