@@ -18,3 +18,4 @@ if __name__ == "__main__":
     # NOTE: Specify HTTP transport here
     print("Starting FastMCP HTTP server on http://127.0.0.1:5000/mcp …")
     mcp.run(transport="http", host="127.0.0.1", port=5000)
+
