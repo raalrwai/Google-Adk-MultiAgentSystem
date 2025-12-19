@@ -49,7 +49,7 @@ manager_agent = Agent(
     model="gemma-3-27b-it",
     instruction=ROOT_MANAGER_INSTR,
     sub_agents=[mcp_sub_agent],
-    tools=[sentiment_agent],
+    # tools=[sentiment_agent],
 )
 
 root_agent = manager_agent

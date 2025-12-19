@@ -3,18 +3,14 @@ import requests
 from dotenv import load_dotenv
 from pathlib import Path
 
-# =======================
-# Load .env
-# =======================
+
 env_path = Path(r"C:\Users\Rami Alrwais\Desktop\GoogleADK\.env")  # Adjust if needed
 load_dotenv(dotenv_path=env_path)
 
 API_KEY = os.getenv("GOOGLE_SEARCH_API_KEY")
 CSE_ID = os.getenv("GOOGLE_SEARCH_CSE_ID")
 
-# =======================
-# Helper function to perform Google search
-# =======================
+
 def google_search(query: str, num_results: int = 5) -> dict:
     """
     Perform a Google Custom Search.
@@ -68,9 +64,7 @@ def google_search(query: str, num_results: int = 5) -> dict:
             "error": str(e)
         }
 
-# =======================
-# Optional CLI test
-# =======================
+
 if __name__ == "__main__":
     query = input("Enter search query: ").strip()
     if not query:
